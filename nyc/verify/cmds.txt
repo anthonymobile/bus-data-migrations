@@ -1,0 +1,15 @@
+
+# COUNT of files to be copied from source
+
+aws s3 ls s3://busobservatory/incoming/nyc_ec2/glaciers/ --recursive | grep -c "glacier_"
+
+# COUNT of files copied to destination
+
+aws s3 ls s3://busobservatory/nyct_mta_bus_siri_raw/ --recursive | grep -c "glacier_"
+
+
+### LIST them? using cp
+#
+# aws s3 cp s3://busobservatory/incoming/nyc_ec2/glaciers/ . --exclude "*" --include "glacier_*" --recursive --dryrun > incoming_glacier_list.txt
+
+
